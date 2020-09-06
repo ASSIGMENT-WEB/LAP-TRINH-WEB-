@@ -1,4 +1,7 @@
 <!doctype html>
+<?php
+require("../back-end/database.php");
+?>
 <html>
 <head>
 <meta charset="utf-8">
@@ -6,7 +9,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="CSS/index.css">
-<title>Untitled Document</title>
+<title>DRAGONSTONE.VN - CÔNG TY TNHH THƯƠNG MẠI - PHÁT TRIỂN - XÂY DỰNG CỬU LONG</title>
 </head>
 
 <body>
@@ -15,86 +18,55 @@
 	?>
 	<div id="content">
 		<div id="slide" class="w3-section">
-			<img src="image/slide/baner-main-3-1400x560.jpg" alt="" style="width: 100%; height: 100%;" class="mySlides">
+			<?php
+			$qr_slide = "SELECT * FROM slide";
+			$slide = mysqli_query($conn,$qr_slide);
+			while ($row_slide = mysqli_fetch_assoc($slide)) {
+			?>
+			<img src="image/slide/<?php echo $row_slide['image'] ?>" alt="" style="width: 100%; height: 100%;" class="mySlides">
+			<?php } ?>
 		</div>
 		<div id="main-content">
 			<div id="project">
 				<a href="#"><h4>HẠNG MỤC THI CÔNG:</h4></a>
 				<div class="w3-row" style="padding-bottom: 3px;">
+					<?php
+					$qr_loaihangmuc = "SELECT * FROM loaihangmucthicong";
+					$loaihangmuc = mysqli_query($conn,$qr_loaihangmuc);
+					while ($row_loaihangmuc = mysqli_fetch_assoc($loaihangmuc)) {
+					?>
 					<div class="w3-col m3 s6">
-						<div class="product-detail">
-							<a href="#"><img src="image/products/da-op-mat-tien.jpg" alt="" width="100%" height="100%"></a>
+						<div class="product-detail1">
+							<a href="#"><img src="image/hangmucthicong/<?php echo $row_loaihangmuc['image'] ?>" alt="" width="100%" height="100%"></a>
 						</div>
 					</div>
-					<div class="w3-col m3 s6">
-						<div class="product-detail">
-							<a href="#"><img src="image/products/da-op-mat-tien.jpg" alt="" width="100%" height="100%"></a>
-						</div>
-					</div>
-					<div class="w3-col m3 s6">
-						<div class="product-detail">
-							<a href="#"><img src="image/products/da-op-mat-tien.jpg" alt="" width="100%" height="100%"></a>
-						</div>
-					</div>
-					<div class="w3-col m3 s6">
-						<div class="product-detail">
-							<a href="#"><img src="image/products/da-op-mat-tien.jpg" alt="" width="100%" height="100%"></a>
-						</div>
-					</div>
-					<div class="w3-col m3 s6">
-						<div class="product-detail">
-							<a href="#"><img src="image/products/da-op-mat-tien.jpg" alt="" width="100%" height="100%"></a>
-						</div>
-					</div>
-					<div class="w3-col m3 s6">
-						<div class="product-detail">
-							<a href="#"><img src="image/products/da-op-mat-tien.jpg" alt="" width="100%" height="100%"></a>
-						</div>
-					</div>
-					<div class="w3-col m3 s6">
-						<div class="product-detail">
-							<a href="#"><img src="image/products/da-op-mat-tien.jpg" alt="" width="100%" height="100%"></a>
-						</div>
-					</div>
-					<div class="w3-col m3 s6">
-						<div class="product-detail">
-							<a href="#"><img src="image/products/da-op-mat-tien.jpg" alt="" width="100%" height="100%"></a>
-						</div>
-					</div>
+					<?php } ?>
 				</div>
 				
 			</div>
 			<div id="products">
-				<a href="#"><h4>--ĐÁ MARBLE--</h4></a>
+				<?php
+				$qr_typeProduct = "SELECT * FROM type_products LIMIT 2";
+				$typeProduct = mysqli_query($conn,$qr_typeProduct);
+				$row_typeProduct = mysqli_fetch_assoc($typeProduct);
+				?>
+				<a href="#"><h4>--<?php echo $row_typeProduct['name']; ?>--</h4></a>
 				<div class="w3-row" style="padding-bottom: 3px;">
+					<?php
+					$qr_products = "SELECT * FROM products WHERE id_type=1 LIMIT 4";
+					$products = mysqli_query($conn,$qr_products);
+					while($row_products = mysqli_fetch_assoc($products)) {
+					?>
 					<div class="w3-col m3 s6">
 						<div class="product-detail w3-card">
-							<a href="#"><img src="image/products/da-marble-trang-volakas-01-400x400.jpg" alt="" width="100%" height="100%"></a>
-							<div class="product-name">Đá marble trắng volakas</div>
+							<a href="#"><img src="image/products/<?php echo $row_products['image']; ?>" alt="" width="100%" height="100%"></a>
+							<div class="product-name"><?php echo $row_products['name']; ?></div>
 							<div class="sdt">Liên hệ: 0933 67 62 64</div>
 						</div>
 					</div>
-					<div class="w3-col m3 s6">
-						<div class="product-detail w3-card">
-							<a href="#"><img src="image/products/da-marble-trang-volakas-01-400x400.jpg" alt="" width="100%" height="100%"></a>
-							<div class="product-name">Đá marble trắng volakas</div>
-							<div class="sdt">Liên hệ: 0933 67 62 64</div>
-						</div>
-					</div>
-					<div class="w3-col m3 s6">
-						<div class="product-detail w3-card">
-							<a href="#"><img src="image/products/da-marble-trang-volakas-01-400x400.jpg" alt="" width="100%" height="100%"></a>
-							<div class="product-name">Đá marble trắng volakas</div>
-							<div class="sdt">Liên hệ: 0933 67 62 64</div>
-						</div>
-					</div>
-					<div class="w3-col m3 s6">
-						<div class="product-detail w3-card">
-							<a href="#"><img src="image/products/da-marble-trang-volakas-01-400x400.jpg" alt="" width="100%" height="100%"></a>
-							<div class="product-name">Đá marble trắng volakas</div>
-							<div class="sdt">Liên hệ: 0933 67 62 64</div>
-						</div>
-					</div>
+					<?php } ?>
+					
+					
 				</div>
 			</div>
 			<div id="products">

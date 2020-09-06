@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+#title-content h4 {
+	font-weight: bold;
+	color: #555555;
+}
+.box-img {
+	padding: 4px;
+}
+.box-news {
+	padding: 10px; 
+}
+.box-news-tittle {
+	font-weight: bold;
+}
+.box-text-right {
+	margin-bottom: 20px;
+}
+.box-text-title {
+	border: 1px solid black;
+	background-color: #001849;
+	color:  white;
+	text-align: center;
+}
