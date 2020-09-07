@@ -64,7 +64,7 @@ a {
 #footer {
 	margin-left: 53.25px;
 	margin-right: 53.25;
-	padding-bottom: 100px;
+	padding-bottom: 50px;
 }
 #footer-left,#footer-middle,#footer-right {
 	border-right: 1px solid #ccc;
@@ -86,8 +86,8 @@ a {
 }
 #copyright {
 	text-align: center;
-	color: white;
-	background-color: blueviolet;
+	color: #8e8da5;
+	background-color: #1c1a4b;
 	padding-top: 3px;
 	padding-bottom: 3px;
 }

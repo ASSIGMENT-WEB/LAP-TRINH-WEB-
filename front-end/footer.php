@@ -1,6 +1,6 @@
 <div id="footer" style="margin-top: 50px;">
 		<div class="w3-row">
-			<div class="w3-col m4">
+			<div class="w3-col l4 s12 m4">
 				<div id="footer-left">
 					<div id="title">
 						<h3>LIÊN HỆ DRAGONSTONE.VN</h3>
@@ -14,7 +14,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="w3-col m4">
+			<div class="w3-col l4 s12 m4">
 				<div id="footer-middle">
 					<div id="title">
 						<h3>HỖ TRỢ TƯ VẤN</h3>
@@ -25,18 +25,18 @@
 							<input type="text" placeholder="Tên của bạn"><br>
 							<input type="text" placeholder="Số điện thọai của bạn"><br>
 							<input type="text" placeholder="Nội dung đăng kí"><br>
-							<button type="submit" class="w3-button w3-black">Đăng Ký</button>
+							<button type="submit" class="w3-button" style="font-weight: bold;color: white;background-color: #dd9933;">ĐĂNG KÝ</button>
 						</form>
 					</div>
 				</div>
 			</div>
-			<div class="w3-col m4">
+			<div class="w3-col l4 s12 m4">
 				<div id="footer-right">
 					<div id="title">
 						<h3>FACEBOOK</h3>
 					</div>
 					<div id="footer-content">
-						<iframe src="https://www.facebook.com/dragonstonevietnam/" frameborder="0" width="100%"></iframe>
+						<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fdragonstonevietnam&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="100%" height="500px" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 					</div>
 					<div id="footer-logo" class="w3-center">
 						<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fdragonstone.vn%2Fthi-cong%2Fcau-thang-da%2Fthi-cong-cau-thang-mat-go-co-da-tao-khong-gian-hien-dai%2F" target="_blank">

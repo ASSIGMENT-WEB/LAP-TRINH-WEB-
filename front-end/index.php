@@ -46,60 +46,50 @@ require("../back-end/database.php");
 			</div>
 			<div id="products">
 				<?php
-				$qr_typeProduct = "SELECT * FROM type_products LIMIT 2";
-				$typeProduct = mysqli_query($conn,$qr_typeProduct);
-				$row_typeProduct = mysqli_fetch_assoc($typeProduct);
+				$qr_marble = "SELECT * FROM type_products WHERE id=1";
+				$marble = mysqli_query($conn,$qr_marble);
+				$row_marble = mysqli_fetch_assoc($marble);
 				?>
-				<a href="#"><h4>--<?php echo $row_typeProduct['name']; ?>--</h4></a>
+				<a href="#"><h4>--<?php echo $row_marble['name']; ?>--</h4></a>
 				<div class="w3-row" style="padding-bottom: 3px;">
 					<?php
-					$qr_products = "SELECT * FROM products WHERE id_type=1 LIMIT 4";
-					$products = mysqli_query($conn,$qr_products);
-					while($row_products = mysqli_fetch_assoc($products)) {
+					$qr_products1 = "SELECT * FROM products WHERE id_type=1 LIMIT 10,4";
+					$products1 = mysqli_query($conn,$qr_products1);
+					while($row_products1 = mysqli_fetch_assoc($products1)) {
 					?>
 					<div class="w3-col m3 s6">
 						<div class="product-detail w3-card">
-							<a href="#"><img src="image/products/<?php echo $row_products['image']; ?>" alt="" width="100%" height="100%"></a>
-							<div class="product-name"><?php echo $row_products['name']; ?></div>
+							<a href="#"><img src="image/products/<?php echo $row_products1['image']; ?>" alt="" width="100%" height="100%"></a>
+							<div class="product-name"><?php echo $row_products1['name']; ?></div>
+							<div class="sdt">Liên hệ: 0933 67 62 64</div>
+						</div>
+					</div>
+					<?php } ?>
+				</div>
+			</div>
+			<div id="products">
+				<?php
+				$qr_granite = "SELECT * FROM type_products WHERE id=2";
+				$granite = mysqli_query($conn,$qr_granite);
+				$row_granite = mysqli_fetch_assoc($granite);
+				?>
+				<a href="#"><h4>--<?php echo $row_granite['name']; ?>--</h4></a>
+				<div class="w3-row" style="padding-bottom: 3px;">
+					<?php 
+					$qr_products2 = "SELECT * FROM products WHERE id_type=2 LIMIT 2,4";
+					$products2 = mysqli_query($conn,$qr_products2);
+					while($row_products2 = mysqli_fetch_assoc($products2)) {
+					?>
+					<div class="w3-col m3 s6">
+						<div class="product-detail w3-card">
+							<a href="#"><img src="image/products/<?php echo $row_products2['image']; ?>" alt="" width="100%" height="100%"></a>
+							<div class="product-name"><?php echo $row_products2['name']; ?></div>
 							<div class="sdt">Liên hệ: 0933 67 62 64</div>
 						</div>
 					</div>
 					<?php } ?>
 					
 					
-				</div>
-			</div>
-			<div id="products">
-				<a href="#"><h4>--ĐÁ MARBLE--</h4></a>
-				<div class="w3-row" style="padding-bottom: 3px;">
-					<div class="w3-col m3 s6">
-						<div class="product-detail w3-card">
-							<a href="#"><img src="image/products/da-marble-trang-volakas-01-400x400.jpg" alt="" width="100%" height="100%"></a>
-							<div class="product-name">Đá marble trắng volakas</div>
-							<div class="sdt">Liên hệ: 0933 67 62 64</div>
-						</div>
-					</div>
-					<div class="w3-col m3 s6">
-						<div class="product-detail w3-card">
-							<a href="#"><img src="image/products/da-marble-trang-volakas-01-400x400.jpg" alt="" width="100%" height="100%"></a>
-							<div class="product-name">Đá marble trắng volakas</div>
-							<div class="sdt">Liên hệ: 0933 67 62 64</div>
-						</div>
-					</div>
-					<div class="w3-col m3 s6">
-						<div class="product-detail w3-card">
-							<a href="#"><img src="image/products/da-marble-trang-volakas-01-400x400.jpg" alt="" width="100%" height="100%"></a>
-							<div class="product-name">Đá marble trắng volakas</div>
-							<div class="sdt">Liên hệ: 0933 67 62 64</div>
-						</div>
-					</div>
-					<div class="w3-col m3 s6">
-						<div class="product-detail w3-card">
-							<a href="#"><img src="image/products/da-marble-trang-volakas-01-400x400.jpg" alt="" width="100%" height="100%"></a>
-							<div class="product-name">Đá marble trắng volakas</div>
-							<div class="sdt">Liên hệ: 0933 67 62 64</div>
-						</div>
-					</div>
 				</div>
 			</div>
 			<div id="news">

@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* CSS Document */
+form {
+	padding: 15px;
+}
+div.l6 input {
+	width: 100%;
+	margin-bottom: 20px;
+}
+div.l6 form lable {
+	font-weight: bold;
+}
