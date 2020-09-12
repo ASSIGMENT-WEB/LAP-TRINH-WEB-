@@ -22,3 +22,10 @@
 	color:  white;
 	text-align: center;
 }
+.project-content {
+	padding-right: 25px;
+}
+.project-content img {
+	width: 100%;
+	height: auto;
+}

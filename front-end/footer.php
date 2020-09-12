@@ -1,5 +1,5 @@
 <div id="footer" style="margin-top: 50px;">
-		<div class="w3-row">
+		<div class="w3-row" style="display: table;width: 100%">
 			<div class="w3-col l4 s12 m4">
 				<div id="footer-left">
 					<div id="title">

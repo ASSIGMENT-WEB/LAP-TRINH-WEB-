@@ -23,7 +23,7 @@ require("../back-end/database.php");
 			$slide = mysqli_query($conn,$qr_slide);
 			while ($row_slide = mysqli_fetch_assoc($slide)) {
 			?>
-			<img src="image/slide/<?php echo $row_slide['image'] ?>" alt="" style="width: 100%; height: 100%;" class="mySlides">
+			<img src="image/slide/<?php echo $row_slide['image'] ?>" alt="" style="width: 100%; height: 482px;" class="mySlides">
 			<?php } ?>
 		</div>
 		<div id="main-content">
@@ -37,7 +37,7 @@ require("../back-end/database.php");
 					?>
 					<div class="w3-col m3 s6">
 						<div class="product-detail1">
-							<a href="#"><img src="image/hangmucthicong/<?php echo $row_loaihangmuc['image'] ?>" alt="" width="100%" height="100%"></a>
+							<a href="project.php?id=<?php echo $row_loaihangmuc['id'] ?>"><img src="image/hangmucthicong/<?php echo $row_loaihangmuc['image'] ?>" alt="" width="100%" height="100%"></a>
 						</div>
 					</div>
 					<?php } ?>
@@ -95,28 +95,26 @@ require("../back-end/database.php");
 			<div id="news">
 				<h4>TIN TỨC VỀ ĐÁ HOA CƯƠNG</h4>
 				<div class="w3-row">
+					<?php
+					$qr_news = "SELECT * FROM tintuc LIMIT 4";
+					$news = mysqli_query($conn,$qr_news);
+					while($row_news = mysqli_fetch_assoc($news)) {
+					?>
+					<a href="news_content.php?id=<?php echo $row_news['id'] ?>">
 					<div class="w3-col l6 m12 s12" >
 						<div class="w3-row w3-card w3-margin-bottom" style="padding: 8px;">
 							<div class="w3-col m3">
-								<div id="news-img"><a href="#"><img src="image/news/thi-cong-da-tu-nhien-lat-san-vuon-dep-gia-re89.jpg" alt="" width="100%" height="100%"></a></div>
+								<div id="news-img"><img src="image/news/<?php echo $row_news['image'] ?>" alt="" width="100%" height="100%"></div>
 							</div>
 							<div class="w3-col m9" style="padding: 8px;">
-								<div id="news-title" style="font-weight: bold;border-bottom: 1px solid #ccc;">Thi công đá tự nhiên lát sân vườn đẹp giá rẻ</div>
-								<div id="news-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dignissimos dolorum ad pariatur accusantium quasi, quae ab accusamus consequuntur eos!</div>
-							</div>
-						</div>
-					</div>	
-					<div class="w3-col l6 m12 s12">
-						<div class="w3-row w3-card w3-margin-bottom" style="padding: 8px;">
-							<div class="w3-col m3">
-								<div id="news-img"><a href="#"><img src="image/news/thi-cong-da-tu-nhien-lat-san-vuon-dep-gia-re89.jpg" alt="" width="100%" height="100%"></a></div>
-							</div>
-							<div class="w3-col m9" style="padding: 8px;">
-								<div id="news-title" style="font-weight: bold;border-bottom: 1px solid #ccc;">Thi công đá tự nhiên lát sân vườn đẹp giá rẻ</div>
-								<div id="news-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dignissimos dolorum ad pariatur accusantium quasi, quae ab accusamus consequuntur eos!</div>
+								<div id="news-title" style="font-weight: bold;border-bottom: 1px solid #ccc;"><?php echo $row_news['tieuDe'] ?></div>
+								<div id="news-content"><?php echo $row_news['tomTat'] ?></div>
 							</div>
 						</div>
 					</div>
+					</a>
+					<?php } ?>
+					
 				</div>	
 			</div>
 		</div>

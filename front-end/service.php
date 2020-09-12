@@ -1,3 +1,6 @@
+<?php
+require("../back-end/database.php");
+?>
 <!doctype html>
 <html>
 <head>
@@ -19,50 +22,37 @@
 			<div class="w3-row">
 				<div class="w3-col l9" style="border-right: solid 1px #ccc; height: 100%;">
 					<div id="title-content" class="w3-center">
-						<h4>CATEGORY ARCHIVES: ĐÁ LÁT NỀN</h4>
+						<?php
+						$qr_dichvuthicong = "SELECT * FROM dichvuthicong";
+						$dichvuthicong = mysqli_query($conn,$qr_dichvuthicong);
+						
+						?>
+						<h4>CATEGORY ARCHIVES: Dịch vụ thi công, tin tức</h4>
 					</div>
 					<div id="news-contruction">
+						<?php
+								while($row_dichvuthicong = mysqli_fetch_assoc($dichvuthicong)){
+						?>
 						<div class="w3-row" style="margin-bottom: 16px;">
-							<a href="#">
+							<a href="service_content.php?id=<?php echo $row_dichvuthicong['id'] ?>">
 								<div class="w3-col l5 s12">
 									<div class="box-img">
-										<img src="image/news/tu-a-den-z-nhung-mau-da-op-lat-cau-thang-hot-nhat-trong-nam-2020-651x400.jpg" alt="" width="100%">
+										<img src="image/hangmucthicong/<?php echo $row_dichvuthicong['image'] ?>" alt="" width="100%" height="250px;">
 									</div>
 								</div>
 								<div class="w3-col l7 s12">
 									<div class="box-news">
 										<div class="box-news-tittle">
-											Đá hoa cương Ấn Độ đen có đặc điểm gì?
+											<?php echo $row_dichvuthicong['tieuDe'] ?>
 										</div><hr>
 										<div class="box-news-summary">
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, delectus.
+											<?php echo $row_dichvuthicong['tomTat'] ?>
 										</div>
 									</div>
 								</div>
 							</a>
-							
 						</div>
-						<div class="w3-row" style="margin-bottom: 16px;">
-							<a href="#">
-								<div class="w3-col l5 s12">
-									<div class="box-img">
-										<img src="image/news/thi-cong-da-granite-den-kim-sa-trung-dep-dam-bao-chat-luong61.jpg" alt="" width="100%">
-									</div>
-								</div>
-								<div class="w3-col l7 s12">
-									<div class="box-news">
-										<div class="box-news-tittle">
-											Đá hoa cương Ấn Độ đen có đặc điểm gì?
-										</div><hr>
-										<div class="box-news-summary">
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, delectus.
-										</div>
-									</div>
-								</div>
-							</a>
-							
-						</div>
-						
+						<?php } ?>
 						
 						
 					</div>
@@ -84,62 +74,29 @@
 							<h4>TIN TỨC CẬP NHẬT</h4>
 						</div>
 						<div style="border: 1px solid black;">
+							<?php
+							$qr_news = "SELECT * FROM tintuc LIMIT 5";
+							$news = mysqli_query($conn,$qr_news);
+							while($row_news = mysqli_fetch_assoc($news)) {
+							?>
 							<div class="w3-row" style="padding: 8px; margin-bottom: 10px;">
 								<a href="#">
 									<div class="w3-col l5">
 										<div class="">
-											<img src="image/news/da-lua-100x100.jpg" alt="">
+											<img src="image/news/<?php echo $row_news['image'] ?>" alt="" width="100px" height="100px">
 										</div>
 									</div>
 									<div class="w3-col l7">
-										<div class="news-right-title">
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur optio necessitatibus quia natus cupiditate consequatur.
+										<div class="news-right-title" style="font-weight: bold">
+											<?php echo $row_news['tieuDe'] ?>
 										</div>
 									</div>
 								</a>
 							</div>
-							<div class="w3-row" style="padding: 8px; margin-bottom: 10px;">
-								<a href="#">
-									<div class="w3-col l5">
-										<div class="">
-											<img src="image/news/da-lua-100x100.jpg" alt="">
-										</div>
-									</div>
-									<div class="w3-col l7">
-										<div class="news-right-title">
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur optio necessitatibus quia natus cupiditate consequatur.
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="w3-row" style="padding: 8px; margin-bottom: 10px;">
-								<a href="#">
-									<div class="w3-col l5">
-										<div class="">
-											<img src="image/news/da-lua-100x100.jpg" alt="">
-										</div>
-									</div>
-									<div class="w3-col l7">
-										<div class="news-right-title">
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur optio necessitatibus quia natus cupiditate consequatur.
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="w3-row" style="padding: 8px; margin-bottom: 10px;">
-								<a href="#">
-									<div class="w3-col l5">
-										<div class="">
-											<img src="image/news/da-lua-100x100.jpg" alt="">
-										</div>
-									</div>
-									<div class="w3-col l7">
-										<div class="news-right-title">
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur optio necessitatibus quia natus cupiditate consequatur.
-										</div>
-									</div>
-								</a>
-							</div>
+							<?php } ?>
+							
+							
+							
 						</div>
 						
 					</div>
