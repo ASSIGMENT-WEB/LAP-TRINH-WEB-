@@ -57,13 +57,15 @@
 								<?php
 								if(isset($_SESSION['user'])) {
 								?>
-								<div class="w3-bar-item w3-button">Xin chào, ABC</div>
-								<a href="#" class="w3-bar-item w3-button">Đăng xuất</a>
+								<div class="w3-bar-item w3-button">Xin chào, <?php echo $_SESSION['user'] ?></div>
+								<a href="../back-end/logout.php" class="w3-bar-item w3-button">Đăng xuất</a>
+								<?php } else if(isset($_SESSION['admin'])) { ?>
+								 <div class="w3-bar-item w3-button">Xin chào, <?php echo $_SESSION['admin'] ?></div>
+								<a href="../back-end/logout.php" class="w3-bar-item w3-button">Đăng xuất</a>
 								<?php } else { ?>
-								 <a href="login.php" class="w3-bar-item w3-button">Đăng nhập</a>
+  								<a href="login.php" class="w3-bar-item w3-button">Đăng nhập</a>
   								<a href="signup.php" class="w3-bar-item w3-button">Đăng ký</a>
 								<?php } ?>
-  								
 							</div>
 						</div>
 						<div id="contact">

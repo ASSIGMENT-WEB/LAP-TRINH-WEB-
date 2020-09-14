@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 12, 2020 at 04:12 AM
+-- Generation Time: Sep 14, 2020 at 04:59 AM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -266,7 +266,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `products_id_type_foreign` (`id_type`)
-) ENGINE=InnoDB AUTO_INCREMENT=306 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=335 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `products`
@@ -574,10 +574,7 @@ INSERT INTO `products` (`id`, `name`, `id_type`, `description`, `image`, `create
 (299, 'Tay vịn đá 008', 5, NULL, '20103511221820639.jpg', NULL, NULL),
 (300, 'Tay vịn đá cao cấp 006', 5, NULL, '20103511202570671.jpg', NULL, NULL),
 (301, 'Tay vịn đá sang trọng 005', 5, NULL, '20103511121226377.jpg', NULL, NULL),
-(302, 'Tay vịn đá trang trí cho không gian nhà đẹp của bạn 004', 5, NULL, 'cot33-600x600.jpg', NULL, NULL),
-(303, 'Tay vịn đá tự nhiên 002', 5, NULL, 'cot34-600x600.jpg', NULL, NULL),
-(304, 'Trụ đề pa 001', 5, NULL, 'cot16-600x600.jpg', NULL, NULL),
-(305, 'Lục bình 002', 5, NULL, 'cot24-600x600.jpg', NULL, NULL);
+(302, 'Tay vịn đá trang trí cho không gian nhà đẹp của bạn', 5, NULL, 'cot33-600x600.jpg', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -681,9 +678,18 @@ CREATE TABLE IF NOT EXISTS `users` (
   `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `quyen` int(11) DEFAULT 0,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `full_name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`, `quyen`) VALUES
+(10, 'Nguyễn Hoàng Phúc', 'phuc.nguyenblackjack@hcmut.edu.vn', 'b994bf33a172b1ebb66d9d012b802ba6', NULL, NULL, NULL, 0),
+(13, 'Admin', 'admin@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', NULL, NULL, NULL, 1);
 
 --
 -- Constraints for dumped tables
