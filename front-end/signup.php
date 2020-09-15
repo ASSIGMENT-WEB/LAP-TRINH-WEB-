@@ -24,7 +24,7 @@ require("../back-end/database.php");
 				<h3><b>MY ACCOUNT</b></h3>
 			</div>
 			<h4>ĐĂNG KÝ</h4>
-			<div class="" id="thongbao" style="display: none"></div> 
+			<div class="" id="thongbao" style="display: none"><p></p></div> 
 			
 				<p>      
   					<label><b>Họ tên*</b</label>
@@ -129,12 +129,12 @@ require("../back-end/database.php");
 					if(num_email > 0 || email.length < 6 || email.length > 40 || pass.length < 6 || pass.length > 40 || pass != repass || full_name == "" || email == "" || pass == "") {
 						$("#thongbao").css({"display":"block"});
 						$("#thongbao").attr("class","w3-panel w3-red");
-						$("#thongbao").html("Đăng ký tài khoản thất bại. Kiểm tra lại!");
+						$("#thongbao p").html("Đăng ký tài khoản thất bại. Kiểm tra lại!");
 					}
 						else {
 						$("#thongbao").css({"display":"block"});
 						$("#thongbao").attr("class","w3-panel w3-green");
-						$("#thongbao").html("Đã đăng ký tài khoản!");
+						$("#thongbao p").html("Đã đăng ký tài khoản!");
 					}
 				});
 			});

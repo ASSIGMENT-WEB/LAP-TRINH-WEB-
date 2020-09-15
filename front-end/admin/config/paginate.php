@@ -37,7 +37,7 @@ $start = ($page - 1)*$sotin;
 			</form>
 		</div>
 		<?php  echo "Tìm thấy ".$num_row." sản phẩm";?>
-		<div class="w3-button w3-pink w3-hover-purple w3-right w3-margin-top w3-margin-bottom">Thêm sản phẩm</div>
+		<a href="insert.php" class="w3-button w3-pink w3-hover-purple w3-right w3-margin-top w3-margin-bottom">Thêm sản phẩm</a>
 		<table class="w3-table-all w3-hoverable w3-margin-top">
     		<thead>
       			<tr class="w3-light-grey">
