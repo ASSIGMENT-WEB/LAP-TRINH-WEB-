@@ -3,15 +3,15 @@
 		<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none; width: 340px;" id="leftMenu">
   			<button onclick="closeLeftMenu()" class="w3-bar-item w3-button w3-large">&times;</button>
   			<div id="search">
-				<form action="" method="get" class="w3-bar-item">
-					<input type="text" placeholder="Tìm kiếm...">
+				<form action="" method="post" class="w3-bar-item">
+					<input type="text"  placeholder="Tìm ...">
 					<button type="submit"><i class="fa fa-search"></i></button>
 				</form>
 			</div>
   			<a href="index.php" class="w3-bar-item w3-button">TRANG CHỦ</a>
 			<a href="introduce.php" class="w3-bar-item w3-button">GIỚI THIỆU</a>
 			<a href="catalogue.php" class="w3-bar-item w3-button">CATALOGUE</a>
-			<a href="#" class="w3-bar-item w3-button">SẢN PHẨM</a>
+			<a href="product.php" class="w3-bar-item w3-button">SẢN PHẨM</a>
 			<a href="project.php?id=1" class="w3-bar-item w3-button">HẠNG MỤC THI CÔNG</a>
 			<a href="service.php" class="w3-bar-item w3-button">DỊCH VỤ THI CÔNG</a>
 			<a href="contruction.php" class="w3-bar-item w3-button">CÔNG TRÌNH</a>
@@ -29,7 +29,7 @@
 			<a href="javascript:void(0)" class="w3-button w3-hide-large w3-margin" onclick="openLeftMenu()">&#9776;</a>
 			<div id="logo" class="w3-hide-large w3-display-topmiddle">
 	
-				<a href="#"><img class="" src="image/products/logo.png" alt="" width="200px"></a>
+				<a href="index.php"><img class="" src="image/products/logo.png" alt="" width="200px"></a>
 			</div>
 		</div>
 		<div id="header-top">
@@ -37,13 +37,13 @@
 				<div class="w3-col m3">
 					
 					<div id="logo">
-						<a href="#"><img class="w3-hide-small w3-hide-medium" src="image/products/logo.png" alt="" width="200px"></a>
+						<a href="index.php"><img class="w3-hide-small w3-hide-medium" src="image/products/logo.png" alt="" width="200px"></a>
 					</div>
 				</div>
 				<div class="w3-col m5">
 					<div id="search">
-						<form action="" method="get" class="w3-hide-small w3-hide-medium">
-							<input type="text" placeholder="Tìm kiếm...">
+						<form action="search.php" method="post" class="w3-hide-small w3-hide-medium">
+							<input type="text" name="key" placeholder="Tìm kiếm...">
 							<button type="submit"><i class="fa fa-search"></i></button>
 						</form>
 					</div>
@@ -83,15 +83,15 @@
 					<a href="introduce.php" class="w3-bar-item w3-button w3-hide-small w3-hide-medium">GIỚI THIỆU</a>
 					<a href="catalogue.php" class="w3-bar-item w3-button w3-hide-small w3-hide-medium">CATALOGUE</a>
 					<div class="w3-dropdown-hover">
-						 <button class="w3-button w3-hide-small w3-hide-medium">SẢN PHẨM <i class="fa fa-angle-down"></i></button>
+						 <a href="#" class="w3-button w3-hide-small w3-hide-medium">SẢN PHẨM <i class="fa fa-angle-down"></i></a>
       					<div class="w3-dropdown-content w3-bar-block w3-card-4">
-							<?php
+        					<?php 
 							$qr_typeProducts = "SELECT * FROM type_products";
 							$typeProducts = mysqli_query($conn,$qr_typeProducts);
 							while($row_typeProducts = mysqli_fetch_assoc($typeProducts)) {
 							?>
-        					<a href="#" class="w3-bar-item w3-button"><?php echo $row_typeProducts['name']; ?></a>
-        					<?php } ?>
+        					<a href="product.php?id=<?php echo $row_typeProducts['id'] ?>" class="w3-bar-item w3-button"><?php echo $row_typeProducts['name']; ?></a>
+        				<?php } ?>
       					</div>
 					</div>
 					<div class="w3-dropdown-hover">
